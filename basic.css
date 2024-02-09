@@ -1,0 +1,101 @@
+main {
+   max-width: 960px;
+   margin: 1rem auto;
+   padding: 1rem 2rem;
+   font-size: 130%;
+   line-height: 1.3;
+}
+
+header {
+   background-color: seagreen;
+   padding: 1rem;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+header h1 {
+   color: white;
+   font-size: 200%;
+}
+
+nav {
+   text-align: right;
+}
+
+nav ul {
+   display: flex;
+   text-align: center;
+}
+
+nav a {
+   text-decoration: none;
+   color: snow;
+   margin: 0 1rem;
+   padding: .5rem 1rem;
+   border-radius: 1.5rem;
+}
+
+nav a:hover {
+   background-color: #19462d;
+}
+
+/* ↓ Hides the checkbox in desktop mode ↓ */
+nav input[type="checkbox"],
+nav label {
+   display: none;
+}
+
+
+
+
+/* ↓ Responsie Hamburger Mode ↓ */
+@media (max-width: 600px) {
+
+   /* ↓ Hides the links if the checkbox isn't clicked ↓ */
+   input[type="checkbox"]:not(:checked)+ul {
+      display: none;
+   }
+
+
+   /* ↓ The hamburger icon ↓ */
+   header nav label {
+      display: block;
+      padding: 0.25em;
+      align-self: center;
+      color: white;
+      font-size: 200%;
+      background-color: #19462d;
+   }
+
+   /* Because we are in mobile mode, we want to display it as a vertical list */
+   nav ul {
+      background-color: #cacbca;
+      flex-direction: column;
+   }
+
+
+
+   nav ul li {
+      text-align: right;
+      padding: 0;
+      border-bottom: 3px solid silver;
+   }
+
+   nav ul li:last-child {
+      border-bottom: none;
+   }
+
+   nav ul li a {
+      display: block;
+      font-size: 150%;
+      color: black;
+      margin: 0;
+      border-radius: 0;
+      padding: .5rem 2rem;
+   }
+
+   nav ul li a:hover {
+      color: white;
+   }
+}
