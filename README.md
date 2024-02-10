@@ -1,5 +1,5 @@
 *Template:*
-# Hamburger Menu
+# Hamburger Menus
 
 
 A "hamburger" menu is a form of navigation menu that hides navigation links from the main page. When the user clicks on the icon, the hidden content will slide into view. 
