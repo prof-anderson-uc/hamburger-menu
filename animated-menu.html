@@ -6,7 +6,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Basic Hamburger Menu</title>
    <link rel="stylesheet" href="reset.css">
-   <link rel="stylesheet" href="basic.css">
+   <link rel="stylesheet" href="animated-menu.css">
 </head>
 
 <body>
@@ -14,7 +14,7 @@
 <!-- Note: This page layout doesn't use a wrapper div. Instead, the header goes the entire width and the <main> has a max-width. -->
 
    <header>
-      <h1>Hamburger Menu</h1>
+      <h1>Animated Menu</h1>
       <nav>
          <!-- The hamburger icon (☰) acts as a label for the hidden menu checkbox -->
          <label for="menu" tabindex="0"> ☰ </label>
@@ -32,13 +32,18 @@
    </header>
 
    <main>
-      <h2>What is a Hamburger Menu?</h2>
-      <p>A "hamburger menu" is a type of navigation that hides links behind a <strong>☰</strong> icon to save space.</p>
-      
-      <h2>How This Example Works</h2>
+      <h2>What’s Different in This Version?</h2>
       <p>
-         This example uses a <strong>hidden checkbox</strong> and a <strong>label</strong> (☰) to toggle the menu. When the checkbox is checked,
-         the menu appears. This technique allows us to create a simple dropdown menu <strong>without JavaScript</strong>.
+         This version of the hamburger menu <strong>includes animation</strong> when opening and closing. Instead of appearing instantly, the menu <strong>slides down smoothly</strong> using CSS transitions.
+      </p>
+
+      <h2>How It Works</h2>
+      <p>
+         <ul>
+            <li>The <strong>checkbox</strong> input is still used to toggle visibility.</li>
+            <li>Instead of <code>display: none;</code> we use <code>max-height</code> and <code>transition</code> properties.</li>
+            <li>When checked, the menu <strong>expands smoothly</strong> instead of just appearing.</li>
+         </ul>
       </p>
       
       <h2>Try It!</h2>
