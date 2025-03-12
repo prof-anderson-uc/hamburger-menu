@@ -64,3 +64,6 @@ This version animates **both the menu and the hamburger icon**, turning the ☰ 
 4. Study each version's **CSS files** to understand how each version works. I left comments to explain what most of the style rules are doing.
 
 Feel free to use and modify these examples in your own projects!
+
+## Test it out!  
+Follow [this link](https://prof-anderson-uc.github.io/hamburger-menu/) to test the three versions in your browser.
