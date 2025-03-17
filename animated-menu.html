@@ -1,22 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="animated-menu">
 
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Basic Hamburger Menu</title>
    <link rel="stylesheet" href="reset.css">
+   <link rel="stylesheet" href="shared.css">
+   <!-- ⬇︎ This is the stylesheet for the hamburger menu ⬇︎ -->
    <link rel="stylesheet" href="animated-menu.css">
 </head>
 
 <body>
 
-<!-- Note: This page layout doesn't use a wrapper div. Instead, the header goes the entire width and the <main> has a max-width. -->
+<!-- Note: This page layout doesn't use a wrapper div. Instead, the header goes the entire width and the <main> is limited with a max-width. -->
 
    <header>
       <h1>Animated Menu</h1>
       <nav>
          <!-- The hamburger icon (☰) acts as a label for the hidden menu checkbox -->
+         <!-- This checkbox is hidden and acts as the toggle switch for the menu -->
          <label for="menu" tabindex="0"> ☰ </label>
          
          <!-- Hidden checkbox controls the menu visibility -->

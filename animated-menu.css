@@ -2,13 +2,7 @@
 
 /* General Styles 
 --------------------*/
-body {
-   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-   background-color: #c0cac9;
-}
-
 header {
-   background-color: #546880;
    padding: 1rem;
    display: flex;
    justify-content: space-around;
@@ -20,41 +14,9 @@ header h1 {
    font-size: 200%;
 }
 
-main {
-   max-width: 1000px;
-   margin: 0 auto;
-   padding: 1rem 2rem;
-   font-size: 130%;
-   line-height: 1.3;
-   background-color: snow;
-}
-
-h2 {
-   font-size: 125%;
-   border-bottom: 1px solid silver;
-}
-
-main li {
-   margin: 0 0 .5rem 2rem;
-}
-
-code {
-   font-weight: bold;
-   background-color: #e3e3e3;
-   padding: 2px 5px;
-   border-radius: .5rem;
-}
-
-footer {
-   background-color: #546880;
-   color: white;
-   padding: .5rem;
-   text-align: center;
-}
 
 
-
-/* Navigation Styles 
+/* Desktop Navigation Styles
 --------------------*/
 nav {
    text-align: right;
@@ -66,15 +28,17 @@ nav ul {
 }
 
 nav a {
-   text-decoration: none;
-   color: snow;
-   margin: 0 1rem;
-   padding: .5rem 1rem;
-   border-radius: 1.5rem;
+   transition: all .75s ease; /* Smooth transition effect */
+   display: block; /* Makes the links take up full space */
+   text-decoration: none; /* Removes link underlines */
+   color: snow; /* Link text color */
+   font-size: 120%; /* Link text size */
+   padding: .75rem 1rem; /* Adds padding for spacing */
+   border-radius: 2rem; /* Rounds button edges */
 }
 
 nav a:hover {
-   background-color: #19462d;
+   background-color: rgba(255, 255, 255, 0.2); /* Changes background color on hover */
 }
 
 /* Hides the checkbox and label by default on desktop */
@@ -87,7 +51,7 @@ nav label {
 
 /* Responsive Hamburger Menu 
 --------------------*/
-@media (max-width: 600px) {
+@media (max-width: 768px) {
 
    /* Hide the menu initially and add transition effect */
    nav ul {

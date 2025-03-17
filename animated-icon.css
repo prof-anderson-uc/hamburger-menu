@@ -1,70 +1,22 @@
-body {
-   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-   background-color: #f4e1e9;
-}
+/* Note: This page layout doesn't use a wrapper div. Instead, the header goes the entire width and the <main> has a max-width. This code will also work on a wrapper that has a max-width setting. */
 
-main {
-   max-width: 1000px;
-   margin: 0 auto;
-   padding: 1rem 2rem;
-   font-size: 130%;
-   line-height: 1.3;
-   background-color: snow;
-}
-
-h2 {
-   font-size: 125%;
-   border-bottom: 1px solid silver;
-}
-
-main li {
-   margin: 0 0 .5rem 2rem;
-}
-
-code {
-   font-weight: bold;
-   background-color: #e3e3e3;
-   padding: 2px 5px;
-   border-radius: .5rem;
-}
-
-footer {
-   background-color: thistle;
-   color: white;
-   padding: .5rem;
-   text-align: center;
-}
-
-
-/*--------------------------
- HAMBURGER NAVIGATION BAR
-----------------------------*/
-
-/* Desktop Full-Size Layout 
-----------------------------*/
+/* General Styles 
+--------------------*/
 header {
-   background-color: thistle;
-   display: flex; /* Enables flexbox for layout */
-   justify-content: space-around; /* Spreads elements apart */
-   align-items: center; /* Centers items vertically */
-   padding: .75rem; /* Adds spacing around header */
-}
-
-header a.site-name {
-   text-decoration: none; /* Removes underline from link */
-   color: black; /* Sets text color */
-}
-
-header a.site-name:hover {
-   text-decoration: underline; /* Adds underline on hover */
+   padding: 1rem;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
 }
 
 header h1 {
+   color: white;
    font-size: 200%;
 }
 
-/* Desktop Navigation bar 
-----------------------------*/
+
+/* Desktop Navigation Styles
+--------------------*/
 header nav ul.menu {
    list-style-type: none; /* Removes bullet points */
    overflow: hidden; /* Prevents content from spilling */
@@ -74,8 +26,8 @@ header nav ul.menu {
 header nav li a {
    transition: all .75s ease; /* Smooth transition effect */
    display: block; /* Makes the links take up full space */
-   text-decoration: none; /* Removes underline */
-   color: black; /* Link color */
+   text-decoration: none; /* Removes link underlines */
+   color: snow; /* Link text color */
    font-size: 120%; /* Link text size */
    padding: .75rem 1rem; /* Adds padding for spacing */
    border-radius: 2rem; /* Rounds button edges */
@@ -83,7 +35,7 @@ header nav li a {
 
 header nav li a:hover,
 header input.menu-btn:hover {
-   background-color: #f8f8f8; /* Changes background on hover */
+   background-color: rgba(255, 255, 255, 0.2); /* Changes background color on hover */
 }
 
 /* Hides the menu button and icon by default on large screens */
@@ -98,13 +50,13 @@ header label.menu-icon {
 ----------------------------*/
 @media (max-width: 768px) {
 
-   /* Adjusts header for mobile */
+   /* ⬇︎ Adjusts header on mobile devices */
    header {
        flex-direction: column; /* Stacks items vertically */
        position: relative; /* Ensures proper positioning */
    }
    
-   /* Hide menu initially and animate expansion */
+   /* ⬇︎ Hides menu initially and animate expansion */
    header nav ul.menu {
        max-height: 0; /* Start with hidden menu */
        transition: max-height .5s ease-out; /* Smooth dropdown animation */
@@ -117,27 +69,27 @@ header label.menu-icon {
        flex-direction: column;
    }
    
-   /* ☰ Hamburger Icon Styling */
+   /* ⬇︎ ☰ Hamburger Icon Styling */
    header label.menu-icon {
        display: inline-block; /* Ensures visibility */
        padding: 20px 20px; /* Adds clickable space */
        position: absolute;
        right: 0; /* Positions to the right */
-       top: 3px; /* Aligns with header */
+       top: 7px; /* Aligns with header */
        cursor: pointer; /* Indicates clickability */
    }
 
-   /* Creates the three lines of the hamburger menu */
+   /* ⬇︎ Creates the three lines of the hamburger menu */
    header label.menu-icon span.navicon {
        display: block;
        position: relative;
        transition: all .2s ease-out; /* Smooth background transition */
        height: 5px; /* Thickness of lines */
        width: 25px; /* Width of lines */
-       background: black; /* Color of the ☰ icon */
+       background: white; /* Color of the middle line in the ☰ icon */
    }
 
-   /* Top and bottom lines of the hamburger */
+   /* ⬇︎ Top and bottom lines of the hamburger */
    header label.menu-icon .navicon:before,
    header label.menu-icon .navicon:after {
        content: '';
@@ -146,15 +98,15 @@ header label.menu-icon {
        width: 100%; /* Matches main line width */
        position: absolute;
        transition: all .2s ease-out; /* Smooth transformation */
-       background: black; /* Same color as main icon */
+       background: white; /* Color of the top & bottom lines in the ☰ icon */
    }
 
    header label.menu-icon .navicon:before {
-       top: 9px; /* Position of top line */
+       top: 10px; /* Position of top line */
    }
 
    header label.menu-icon .navicon:after {
-       top: -9px; /* Position of bottom line */
+       top: -10px; /* Position of bottom line */
    }
 
 
@@ -163,17 +115,17 @@ header label.menu-icon {
     HAMBURGER ICON ANIMATION
    ----------------------------*/
 
-   /* Expands the menu when checked */
+   /* ⬇︎ Expands the menu when checked */
    header input.menu-btn:checked ~ ul.menu {
        max-height: 300px; /* Expands menu to fit content */
    }
 
-   /* Transforms the hamburger into an "X" */
+   /* ⬇︎ Transforms the hamburger into an "X" */
    header input.menu-btn:checked ~ label.menu-icon span.navicon {
        background: transparent; /* Hides middle line */
    }
 
-   /* Rotates top and bottom lines into an "X" */
+   /* ⬇︎ Rotates top and bottom lines into an "X" */
    header input.menu-btn:checked ~ label.menu-icon span.navicon:before {
        transform: rotate(-45deg); /* Rotates top bar */
        top: 0; /* Aligns in center */
