@@ -1,0 +1,190 @@
+/* -----------------------------------
+   ANIMATED ICON MENU PAGE STYLES
+--------------------------------------
+
+This page uses the same general header layout
+as hamburger-menu.html. The heading stays on
+the left and the navigation stays on the right
+until the layout switches to the mobile version.
+*/
+
+/* ------------------------------
+   HEADER LAYOUT
+---------------------------------
+
+This page uses a similar header structure
+to the main hamburger menu example so the
+two pages feel related and easy to compare.
+*/
+
+header {
+  padding: 1rem 2rem; /* Adds space inside the header: top/bottom, then left/right */
+  display: flex; /* Places the h1 and nav side-by-side in one row */
+  align-items: center; /* Vertically centers the heading and nav inside the header */
+}
+
+header h1 {
+  color: white; /* Changes the heading text color */
+  font-size: 200%; /* Makes the page title larger */
+  margin: 0; /* Removes the browser's default margin around the h1 */
+}
+
+/* Push the nav area to the far right side of the header */
+header nav {
+  margin-left: auto; /* Uses leftover space to push nav away from the h1 */
+}
+
+/* ------------------------------
+   DESKTOP NAVIGATION
+---------------------------------
+
+On larger screens, the full navigation menu
+is visible in a horizontal row.
+*/
+
+nav ul {
+  display: flex; /* Places the list items side-by-side */
+  text-align: center; /* Centers the text inside the navigation area */
+}
+
+nav a {
+  display: block; /* Makes the full padded area clickable, not just the text */
+  padding: 0.75rem 1rem; /* Adds space inside each menu link */
+  border-radius: 2rem; /* Rounds the corners of the hover background */
+  text-decoration: none; /* Removes the default underline from links */
+  color: #f0f4f8; /* Sets the desktop link text color */
+  font-size: 120%; /* Makes the nav link text a little larger */
+  transition: background-color 0.75s ease, color 0.75s ease; /* Smoothly animates hover color changes */
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.16); /* Adds a soft highlight behind the link on hover */
+  color: #ffffff; /* Brightens the link text color on hover */
+}
+
+/* Hide the checkbox and animated icon on desktop.
+   On larger screens, users see the regular nav links instead. */
+nav input[type="checkbox"],
+nav label {
+  display: none;
+}
+
+/* ------------------------------
+   MOBILE ANIMATED ICON MENU
+---------------------------------
+
+On smaller screens, the full nav is hidden
+and replaced by an animated hamburger icon.
+This icon changes into an X shape when
+the menu is opened.
+*/
+
+@media (max-width: 48rem) {
+
+  /* Keep the nav aligned to the right side of the header */
+  header nav {
+    margin-left: auto; /* Pushes the nav area to the far right */
+    text-align: right; /* Aligns content inside nav to the right */
+  }
+
+  /* Hide the checkbox.
+     It still controls the menu behind the scenes,
+     but users do not need to see it. */
+  nav input[type="checkbox"] {
+    display: none;
+  }
+
+  /* Show the animated hamburger icon.
+     This label acts like the visible button that users click. */
+  nav label.menu-icon {
+    display: flex; /* Lets us stack the three icon lines vertically */
+    flex-direction: column; /* Places the spans in a column instead of a row */
+    justify-content: center; /* Centers the icon lines vertically inside the label box */
+    align-items: center; /* Centers the icon lines horizontally */
+    gap: 0.3rem; /* Controls the space between the three lines */
+    width: 2.5rem; /* Controls the width of the clickable icon area */
+    height: 2.5rem; /* Controls the height of the clickable icon area */
+    cursor: pointer; /* Shows a pointer cursor to indicate it is clickable */
+    margin-left: auto; /* Keeps the icon pushed to the right side */
+    line-height: 1; /* Prevents extra spacing issues inside the label */
+  }
+
+  /* Style the three lines of the hamburger icon */
+  .menu-icon span {
+    display: block; /* Allows each span to behave like a visible line */
+    width: 2rem; /* Controls the width of each line */
+    height: 0.2rem; /* Controls the thickness of each line */
+    background-color: white; /* Sets the color of the icon lines */
+    border-radius: 0.2rem; /* Slightly rounds the ends of each line */
+    transition: all 0.4s ease; /* Smoothly animates the icon lines when the menu opens */
+    transform-origin: center; /* Makes each line rotate from its center point */
+  }
+
+  /* Hide the menu by default on small screens.
+     max-height: 0 collapses the menu vertically.
+     overflow: hidden prevents hidden links from spilling out.
+     We use max-height instead of display: none because
+     max-height can be animated. */
+  nav ul {
+    max-height: 0; /* Starts with the dropdown menu collapsed */
+    overflow: hidden; /* Hides anything that extends beyond the collapsed height */
+    transition: max-height 0.5s ease-in-out; /* Animates the menu opening and closing */
+    background-color: #ffffff; /* Sets the background color of the dropdown menu */
+    border-radius: 12px; /* Rounds the corners of the dropdown box */
+    box-shadow: 0 8px 20px rgba(16, 42, 67, 0.15); /* Adds a soft shadow to lift the dropdown off the page */
+    flex-direction: column; /* Stacks the menu items vertically instead of in a row */
+    margin-top: 0.75rem; /* Adds space between the icon and the dropdown menu */
+    min-width: 220px; /* Prevents the dropdown from becoming too narrow */
+  }
+
+  /* Show the menu when the checkbox is checked.
+     Increase this value if you add more menu links. */
+  #menu-toggle:checked ~ ul {
+    max-height: 300px; /* Gives the dropdown enough height to show the links */
+  }
+
+  /* Animate the first line of the icon.
+     It moves downward and rotates to become part of the X. */
+  #menu-toggle:checked + label span:nth-child(1) {
+    transform: translateY(0.5rem) rotate(45deg);
+  }
+
+  /* Fade out the middle line so only two lines remain visible */
+  #menu-toggle:checked + label span:nth-child(2) {
+    opacity: 0;
+  }
+
+  /* Animate the bottom line of the icon.
+     It moves upward and rotates to become the other half of the X. */
+  #menu-toggle:checked + label span:nth-child(3) {
+    transform: translateY(-0.5rem) rotate(-45deg);
+  }
+
+  /* Style each list item in the mobile dropdown menu */
+  nav ul li {
+    text-align: center; /* Centers the text inside each menu row */
+    padding: 0; /* Removes extra default spacing */
+    border-bottom: 1px solid #d9e2ec; /* Adds divider lines between menu items */
+  }
+
+  /* Remove the bottom border from the final menu item */
+  nav ul li:last-child {
+    border-bottom: none;
+  }
+
+  /* Style the clickable links inside the mobile dropdown */
+  nav ul li a {
+    display: block; /* Makes the whole row clickable */
+    margin: 0; /* Removes extra spacing around the links */
+    padding: 0.8rem 2rem; /* Controls the size of each tappable menu row */
+    border-radius: 0; /* Removes rounded corners inside the dropdown */
+    color: #102a43; /* Sets the mobile link text color */
+    font-size: 125%; /* Makes dropdown links slightly larger */
+  }
+
+  /* Change the appearance when hovering over a mobile menu link */
+  nav ul li a:hover {
+    background-color: #f0f4f8; /* Adds a subtle background highlight */
+    color: #2f6f91; /* Changes the link text to the accent color */
+  }
+}

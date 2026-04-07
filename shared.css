@@ -1,0 +1,85 @@
+/* ------------------------------
+   SHARED PAGE STYLES
+---------------------------------
+
+These styles are shared by multiple pages
+in this project so the individual page CSS
+files can focus on the menu behavior.
+*/
+
+/* ------------------------------
+   BASE PAGE STYLES
+--------------------------------- */
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  background-color: #eef2f6;
+  color: #1f2933;
+}
+
+/* ------------------------------
+   COLOR THEMES
+---------------------------------
+
+Each example page gets its own color theme
+so students can easily tell which page
+they are currently viewing.
+*/
+
+/* Main hamburger menu example: blue/teal theme */
+.hamburger-menu header,
+.hamburger-menu footer {
+  background-color: #0f4c5c;
+}
+
+/* Animated icon example: plum/purple theme */
+.animated-icon header,
+.animated-icon footer {
+  background-color: #7a5c8e;
+}
+
+/* ------------------------------
+   MAIN CONTENT AREA
+--------------------------------- */
+
+main {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(16, 42, 67, 0.08);
+}
+
+/* Section headings inside main */
+main h2 {
+  color: #102a43;
+  margin-top: 0;
+}
+
+/* Paragraph and list text inside main */
+main p,
+main li {
+  color: #334e68;
+}
+
+/* Lists inside the main content */
+main ul {
+  padding-left: 20px;
+}
+
+
+/* ------------------------------
+   MAIN CONTENT LINKS
+--------------------------------- */
+
+main a {
+  color: #2f6f91;
+  text-decoration: none;
+}
+
+main a:hover {
+  text-decoration: underline;
+}

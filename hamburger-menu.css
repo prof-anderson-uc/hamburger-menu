@@ -1,0 +1,131 @@
+/* -----------------------------------
+   HAMBURGER MENU PAGE STYLES
+--------------------------------------
+
+This file contains the styles for the main
+hamburger menu example.
+
+The general page colors and typography come
+from shared.css. This file focuses on the
+header layout and the menu behavior.
+*/
+
+/* ------------------------------
+   HEADER LAYOUT
+--------------------------------- */
+
+header {
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+}
+
+header h1 {
+  color: white;
+  font-size: 200%;
+  margin: 0;
+}
+
+header nav {
+  margin-left: auto;
+}
+
+/* ------------------------------
+   DESKTOP NAVIGATION
+--------------------------------- */
+
+nav {
+  text-align: right;
+}
+
+nav ul {
+  display: flex;
+  text-align: center;
+}
+
+nav a {
+  display: block;
+  padding: 0.75rem 1rem;
+  border-radius: 2rem;
+  text-decoration: none;
+  color: #f0f4f8;
+  font-size: 120%;
+  transition: background-color 0.75s ease, color 0.75s ease;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+
+/* Hide the checkbox and hamburger icon on desktop */
+nav input[type="checkbox"],
+nav label {
+  display: none;
+}
+
+/* ------------------------------
+   MOBILE HAMBURGER MENU
+--------------------------------- */
+
+@media (max-width: 48rem) {
+
+  header nav {
+    margin-left: auto;
+    text-align: right;
+  }
+
+  /* Show the hamburger icon */
+  header nav label {
+    display: block;
+    cursor: pointer;
+    align-self: center;
+    color: white;
+    font-size: 250%;
+    line-height: 1;
+    margin-left: auto;
+  }
+
+  /* Hide menu by default */
+  nav ul {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(16, 42, 67, 0.15);
+    flex-direction: column;
+    margin-top: 0.75rem;
+    min-width: 220px;
+  }
+
+  /* Open menu when checkbox is checked */
+  #menu:checked + ul {
+    max-height: 300px;
+  }
+
+  /* Mobile menu items */
+  nav ul li {
+    text-align: center;
+    padding: 0;
+    border-bottom: 1px solid #d9e2ec;
+  }
+
+  nav ul li:last-child {
+    border-bottom: none;
+  }
+
+  nav ul li a {
+    display: block;
+    margin: 0;
+    padding: 0.8rem 2rem;
+    border-radius: 0;
+    color: #102a43;
+    font-size: 125%;
+  }
+
+  nav ul li a:hover {
+    background-color: #f0f4f8;
+    color: #2f6f91;
+  }
+}
