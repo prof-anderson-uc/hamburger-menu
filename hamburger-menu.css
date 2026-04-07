@@ -1,19 +1,14 @@
 /* -----------------------------------
-   HAMBURGER MENU PAGE STYLES
+   HAMBURGER MENU STYLES
 --------------------------------------
 
-This file contains the styles for the main
-hamburger menu example.
-
-The general page colors and typography come
-from shared.css. This file focuses on the
-header layout and the menu behavior.
+This file contains the styles for the main hamburger menu example.
+The general page colors and typography come from shared.css. This file focuses on the header layout and the menu behavior.
 */
 
 /* ------------------------------
    HEADER LAYOUT
 --------------------------------- */
-
 header {
   padding: 1rem 2rem;
   display: flex;
@@ -27,19 +22,18 @@ header h1 {
 }
 
 header nav {
-  margin-left: auto;
+  margin-left: auto; /* moves menu to the right side */
 }
 
 /* ------------------------------
    DESKTOP NAVIGATION
 --------------------------------- */
-
 nav {
   text-align: right;
 }
 
 nav ul {
-  display: flex;
+  display: flex; /* makes links horizontal list */
   text-align: center;
 }
 
@@ -55,20 +49,19 @@ nav a {
 
 nav a:hover {
   background-color: rgba(255, 255, 255, 0.16);
-  color: #ffffff;
+  color: white;
 }
 
 /* Hide the checkbox and hamburger icon on desktop */
 nav input[type="checkbox"],
 nav label {
-  display: none;
+  
 }
 
 /* ------------------------------
    MOBILE HAMBURGER MENU
 --------------------------------- */
-
-@media (max-width: 48rem) {
+@media (max-width: ) {
 
   header nav {
     margin-left: auto;
@@ -77,55 +70,45 @@ nav label {
 
   /* Show the hamburger icon */
   header nav label {
-    display: block;
-    cursor: pointer;
-    align-self: center;
-    color: white;
-    font-size: 250%;
-    line-height: 1;
-    margin-left: auto;
+      /* Make the label visible on smaller screens */
+      /* Change the cursor so it looks clickable */
+      /* Set the icon color */
+      /* Increase the icon size */
   }
 
   /* Hide menu by default */
   nav ul {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-in-out;
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(16, 42, 67, 0.15);
-    flex-direction: column;
-    margin-top: 0.75rem;
-    min-width: 220px;
+      /* Start with the menu collapsed */
+      /* Hide content that extends past collapsed height */
+      /* Stack menu items vertically */
   }
 
   /* Open menu when checkbox is checked */
+  /* Increase max-height if your menu has more links */
   #menu:checked + ul {
-    max-height: 300px;
+    
   }
 
   /* Mobile menu items */
   nav ul li {
     text-align: center;
-    padding: 0;
-    border-bottom: 1px solid #d9e2ec;
   }
 
   nav ul li:last-child {
-    border-bottom: none;
+    
   }
 
   nav ul li a {
-    display: block;
-    margin: 0;
-    padding: 0.8rem 2rem;
-    border-radius: 0;
-    color: #102a43;
-    font-size: 125%;
+    display: block; /* Makes entire row clickable */
+    margin: 0; /* Removes extra space around link */
+    padding: 0.8rem 2rem; /* Adds more clickable space inside link */
+    border-radius: 0; /* Removes rounded corners so mobile dropdown has straight edges */
+    color: #102a43; /* Text color for mobile menu links */
+    font-size: 125%; /* Adjusts size of mobile menu links */
   }
 
   nav ul li a:hover {
-    background-color: #f0f4f8;
-    color: #2f6f91;
+    background-color: #f0f4f8; /* Background color when hovering over item */
+    color: #2f6f91; /* Text color when hovering */
   }
 }
