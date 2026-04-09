@@ -19,6 +19,7 @@ header h1 {
   color: white;
   font-size: 200%;
   margin: 0;
+  line-height: 1;
 }
 
 header nav {
@@ -103,8 +104,8 @@ nav label {
     margin: 0; /* Removes extra space around link */
     padding: 0.8rem 2rem; /* Adds more clickable space inside link */
     border-radius: 0; /* Removes rounded corners so mobile dropdown has straight edges */
-    color: #102a43; /* Text color for mobile menu links */
     font-size: 125%; /* Adjusts size of mobile menu links */
+    color: ; /* Text color for mobile menu links */
   }
 
   nav ul li a:hover {

@@ -27,6 +27,7 @@ header h1 {
   color: white; /* Changes the heading text color */
   font-size: 200%; /* Makes the page title larger */
   margin: 0; /* Removes the browser's default margin around the h1 */
+  line-height: 1;
 }
 
 /* Push the nav area to the far right side of the header */
